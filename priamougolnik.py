@@ -1,0 +1,11 @@
+import tkinter
+x1, y1, x2, y2 = map(int, input().split())
+main = tkinter.Tk()
+canvas = tkinter.Canvas(main, bg='white', height=600, width=600)
+canvas.create_rectangle((x1, y1),(x2, y2), fill='', outline="black")
+canvas.create_polygon(((x1, y1),((x1 + x2) / 2), (y1 + y2) / 2), (x1, y2), fill='green', outline="black")
+canvas.create_polygon(((x2, y1),((x1 + x2) / 2), (y1 + y2) / 2), (x2, y2), fill='yellow', outline="black")
+canvas.create_polygon(((x1, y1),((x1 + x2) / 2), (y1 + y2) / 2), (x2, y1), fill='blue', outline="black")
+canvas.create_polygon(((x1, y2),((x1 + x2) / 2), (y1 + y2) / 2), (x2, y2), fill='red', outline="black")
+canvas.pack()
+main.mainloop()
